@@ -29,6 +29,7 @@ class MainActivity3 : AppCompatActivity() {
         }
         btnDetener.setOnClickListener {
             if (isServiceRunning(serviceClass)) {
+                val intent = Intent(this, serviceClass) //necesitas definir qué tienes intención de parar
                 stopService(intent)
                 Toast.makeText(this, "Servicio detenido", Toast.LENGTH_LONG).show()
             } else {
